@@ -72,7 +72,7 @@ module.exports = function(grunt) {
             },
             js: {
                 files: ['src/*.js', 'src/plugins/**/plugin.js'],
-                tasks: ['injector:example']
+                tasks: ['injector:example', 'injector:bookbot']
             },
             css: {
                 files: ['src/scss/*.scss', 'src/plugins/**/plugin.scss'],
@@ -85,13 +85,20 @@ module.exports = function(grunt) {
             example: {
                 files: ['examples/**'],
                 tasks: []
+            },
+            bookbot: {
+                files: ['bookbot/**'],
+                tasks: []
             }
         },
 
         // open example
         open: {
-            dev: {
+            example: {
                 path: 'http://localhost:<%= connect.dev.options.port%>/examples/index.html'
+            },
+            dev: {
+                path: 'http://localhost:<%= connect.dev.options.port%>/bookbot/index.html'
             }
         },
 
@@ -329,6 +336,10 @@ module.exports = function(grunt) {
                 src: config.all_js_files.concat(['dist/i18n/query-builder.en.js']),
                 dest: 'examples/index.html'
             },
+            bookbot: {
+                src: config.all_js_files.concat(['dist/i18n/query-builder.en.js']),
+                dest: 'bookbot/index.html'
+            },
             testSrc: {
                 options: {
                     starttag: '<!-- injector:src -->',
@@ -430,6 +441,15 @@ module.exports = function(grunt) {
         'build_lang',
         'build_css',
         'injector:example',
+        'open:example',
+        'connect:dev',
+        'watch'
+    ]);
+
+    grunt.registerTask('serve:bookbot', [
+        'build_lang',
+        'build_css',
+        'injector:bookbot',
         'open',
         'connect:dev',
         'watch'
