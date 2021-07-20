@@ -365,14 +365,17 @@
 
     // get rules
     $('.parse-json').on('click', function() {
+      var output = [];
+      $('.builder').each(function(b) {
+        output.push(
+          $(this).queryBuilder('getRules', {
+            get_flags: true,
+            skip_empty: true
+          }))
+      });
+
       $('#result').removeClass('hide')
-        .find('pre').html(JSON.stringify(
-        $('#builder_0').queryBuilder('getRules', {
-          get_flags: true,
-          skip_empty: true
-        }),
-        undefined, 2
-      ));
+        .find('pre').html(JSON.stringify(output, undefined, 2));
     });
   }
 
