@@ -411,16 +411,17 @@
     // get rules
     $('.parse-json').on('click', function() {
       var output = [];
-      $('.builder').each(function() {
-        output.push(
-          $(this).queryBuilder('getRules', {
-            get_flags: true,
-            skip_empty: true
-          }))
+      $('.builder-container').each(function() {
+        const categoryName = $('.category-select', this).val();
+        const rules = $('.builder', this).queryBuilder('getRules', {
+          get_flags: true,
+          skip_empty: true
+        });
+        output.push({category: categoryName, json: rules})
       });
 
       $('#result').removeClass('hide')
-        .find('pre').html(JSON.stringify(output, undefined, 2));
+        .find('pre').html(JSON.stringify([{ rules: output, rules_set: 1, company: 1 }], undefined, 2));
     });
   }
 
