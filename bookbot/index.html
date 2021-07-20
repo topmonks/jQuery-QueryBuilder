@@ -287,9 +287,9 @@
       if (categoryName)
       {
         categories.push(categoryName);
-        const o = new Option(categoryName, categoryName);
-        $(o).html(categoryName);
         $('.category-select').each(function () {
+          const o = new Option(categoryName, categoryName);
+          $(o).html(categoryName);
           $(this).append(o);
         });
         $('#add-category-input').val('');
@@ -394,11 +394,11 @@
       var el = `<div class="builder-container" id="${builderId}">
                     <div class="builder"></div>
                     <div class="form-inline">
+                      <label>Category:</label>
+                      ${getCategorySelect().outerHTML}
                       <div class="btn-group">
                           <button class="btn btn-danger remove">- Remove rule set</button>
                       </div>
-                      <label>Category:</label>
-                      ${getCategorySelect().outerHTML}
                     </div>
                  </div>`;
       $('#builders').append(el);
