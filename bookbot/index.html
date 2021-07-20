@@ -20,6 +20,9 @@
     .flag {
       display: inline-block;
     }
+    #builders {
+      margin-bottom: 1em;
+    }
   </style>
 </head>
 
@@ -28,12 +31,18 @@
 <div class="container">
   <div class="col-md-12 col-lg-10 col-lg-offset-1">
 
-
-
-    <div id="builder"></div>
+    <div id="builders">
+      <div class="builder-container" id="builder_0">
+        <div class="builder"></div>
+      </div>
+    </div>
 
     <div class="btn-group">
       <button class="btn btn-danger reset">Reset</button>
+    </div>
+
+    <div class="btn-group">
+      <button class="btn btn-success add">+ Add rule set</button>
     </div>
 
     <div class="btn-group">
@@ -44,8 +53,6 @@
     <div class="btn-group">
       <button class="btn btn-default" disabled>Get:</button>
       <button class="btn btn-primary parse-json">JSON</button>
-      <button class="btn btn-primary parse-sql" data-stmt="false">SQL</button>
-      <button class="btn btn-primary parse-sql" data-stmt="question_mark">SQL statement</button>
     </div>
 
     <div id="result" class="hide">
@@ -102,8 +109,6 @@
 
   var initQueryBuilder = (filters) => {
     $('[data-toggle="tooltip"]').tooltip();
-
-    var $b = $('#builder');
 
     var options = {
       allow_empty: true,
@@ -245,9 +250,9 @@
     };
 
     // init
-    $('#builder').queryBuilder(options);
+    $('#builder_0 .builder').queryBuilder(options);
 
-    $('#builder').on('afterCreateRuleInput.queryBuilder', function(e, rule) {
+    $('#builder_0 .builder').on('afterCreateRuleInput.queryBuilder', function(e, rule) {
       if (rule.filter.plugin == 'selectize') {
         rule.$el.find('.rule-value-container').css('min-width', '200px')
           .find('.selectize-control').removeClass('form-control');
@@ -256,7 +261,7 @@
 
     // set rules
     $('.set').on('click', function() {
-      $('#builder').queryBuilder('setRules',
+      $('#builder_0').queryBuilder('setRules',
         {
           "condition": "AND",
           "rules": [
@@ -337,36 +342,37 @@
 
     // reset builder
     $('.reset').on('click', function() {
-      $('#builder').queryBuilder('reset');
+      $('#builder_0 .builder').queryBuilder('reset');
       $('#result').addClass('hide').find('pre').empty();
+    });
+
+    // add builder
+    $('.add').on('click', function() {
+      var builderCount = $('.builder-container').length;
+      var builderId = `builder_${builderCount}`;
+      var el = `<div class="builder-container" id="${builderId}">
+                    <div class="builder"></div>
+                    <div class="btn-group">
+                        <button class="btn btn-danger remove">- Remove rule set</button>
+                    </div>
+                 </div>`;
+      $('#builders').append(el);
+      $(`#${builderId} .builder`).queryBuilder(options);
+      $(`#${builderId} .remove`).on('click', function() {
+        $(this)[0].closest('.builder-container').remove();
+      });
     });
 
     // get rules
     $('.parse-json').on('click', function() {
       $('#result').removeClass('hide')
         .find('pre').html(JSON.stringify(
-        $('#builder').queryBuilder('getRules', {
+        $('#builder_0').queryBuilder('getRules', {
           get_flags: true,
           skip_empty: true
         }),
         undefined, 2
       ));
-    });
-
-    $('.parse-sql').on('click', function() {
-      var res = $('#builder').queryBuilder('getSQL', $(this).data('stmt'), false);
-      $('#result').removeClass('hide')
-        .find('pre').html(
-        res.sql + (res.params ? '\n\n' + JSON.stringify(res.params, undefined, 2) : '')
-      );
-    });
-
-    $('.parse-sql').on('click', function() {
-      var res = $('#builder').queryBuilder('getSQL', $(this).data('stmt'), false);
-      $('#result').removeClass('hide')
-        .find('pre').html(
-        res.sql + (res.params ? '\n\n' + JSON.stringify(res.params, undefined, 2) : '')
-      );
     });
   }
 
