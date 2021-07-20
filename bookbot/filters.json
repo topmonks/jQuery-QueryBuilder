@@ -1,0 +1,664 @@
+{
+    "filters": [
+    {
+        "id": "date__credit__",
+        "field": "date",
+        "label": "date (credit)",
+        "value_separator": ",",
+        "type": "string",
+        "validation": {
+            "allow_empty_value": true
+        }
+    },
+    {
+        "id": "date__debit__",
+        "field": "date",
+        "label": "date (debit)",
+        "value_separator": ",",
+        "type": "string",
+        "validation": {
+            "allow_empty_value": true
+        }
+    },
+    {
+        "id": "period__credit__",
+        "field": "period",
+        "label": "period (credit)",
+        "value_separator": ",",
+        "type": "string",
+        "validation": {
+            "allow_empty_value": true
+        }
+    },
+    {
+        "id": "period__debit__",
+        "field": "period",
+        "label": "period (debit)",
+        "value_separator": ",",
+        "type": "string",
+        "validation": {
+            "allow_empty_value": true
+        }
+    },
+    {
+        "id": "closing_date__credit__",
+        "field": "closing_date",
+        "label": "closing_date (credit)",
+        "value_separator": ",",
+        "type": "string",
+        "validation": {
+            "allow_empty_value": true
+        }
+    },
+    {
+        "id": "closing_date__debit__",
+        "field": "closing_date",
+        "label": "closing_date (debit)",
+        "value_separator": ",",
+        "type": "string",
+        "validation": {
+            "allow_empty_value": true
+        }
+    },
+    {
+        "id": "document_type__credit__",
+        "field": "document_type",
+        "label": "document_type (credit)",
+        "value_separator": ",",
+        "type": "string",
+        "validation": {
+            "allow_empty_value": true
+        }
+    },
+    {
+        "id": "document_type__debit__",
+        "field": "document_type",
+        "label": "document_type (debit)",
+        "value_separator": ",",
+        "type": "string",
+        "validation": {
+            "allow_empty_value": true
+        }
+    },
+    {
+        "id": "int_document__credit__",
+        "field": "int_document",
+        "label": "int_document (credit)",
+        "value_separator": ",",
+        "type": "string",
+        "validation": {
+            "allow_empty_value": true
+        }
+    },
+    {
+        "id": "int_document__debit__",
+        "field": "int_document",
+        "label": "int_document (debit)",
+        "value_separator": ",",
+        "type": "string",
+        "validation": {
+            "allow_empty_value": true
+        }
+    },
+    {
+        "id": "ext_document__credit__",
+        "field": "ext_document",
+        "label": "ext_document (credit)",
+        "value_separator": ",",
+        "type": "string",
+        "validation": {
+            "allow_empty_value": true
+        }
+    },
+    {
+        "id": "ext_document__debit__",
+        "field": "ext_document",
+        "label": "ext_document (debit)",
+        "value_separator": ",",
+        "type": "string",
+        "validation": {
+            "allow_empty_value": true
+        }
+    },
+    {
+        "id": "account__credit__",
+        "field": "account",
+        "label": "account (credit)",
+        "value_separator": ",",
+        "type": "string",
+        "validation": {
+            "allow_empty_value": true
+        }
+    },
+    {
+        "id": "account__debit__",
+        "field": "account",
+        "label": "account (debit)",
+        "value_separator": ",",
+        "type": "string",
+        "validation": {
+            "allow_empty_value": true
+        }
+    },
+    {
+        "id": "account_trans__credit__",
+        "field": "account_trans",
+        "label": "account_trans (credit)",
+        "value_separator": ",",
+        "type": "string",
+        "validation": {
+            "allow_empty_value": true
+        }
+    },
+    {
+        "id": "account_trans__debit__",
+        "field": "account_trans",
+        "label": "account_trans (debit)",
+        "value_separator": ",",
+        "type": "string",
+        "validation": {
+            "allow_empty_value": true
+        }
+    },
+    {
+        "id": "account_name__credit__",
+        "field": "account_name",
+        "label": "account_name (credit)",
+        "value_separator": ",",
+        "type": "string",
+        "validation": {
+            "allow_empty_value": true
+        }
+    },
+    {
+        "id": "account_name__debit__",
+        "field": "account_name",
+        "label": "account_name (debit)",
+        "value_separator": ",",
+        "type": "string",
+        "validation": {
+            "allow_empty_value": true
+        }
+    },
+    {
+        "id": "description__credit__",
+        "field": "description",
+        "label": "description (credit)",
+        "value_separator": ",",
+        "type": "string",
+        "validation": {
+            "allow_empty_value": true
+        }
+    },
+    {
+        "id": "description__debit__",
+        "field": "description",
+        "label": "description (debit)",
+        "value_separator": ",",
+        "type": "string",
+        "validation": {
+            "allow_empty_value": true
+        }
+    },
+    {
+        "id": "description_trans__credit__",
+        "field": "description_trans",
+        "label": "description_trans (credit)",
+        "value_separator": ",",
+        "type": "string",
+        "validation": {
+            "allow_empty_value": true
+        }
+    },
+    {
+        "id": "description_trans__debit__",
+        "field": "description_trans",
+        "label": "description_trans (debit)",
+        "value_separator": ",",
+        "type": "string",
+        "validation": {
+            "allow_empty_value": true
+        }
+    },
+    {
+        "id": "amount__credit__",
+        "field": "amount",
+        "label": "amount (credit)",
+        "value_separator": ",",
+        "type": "string",
+        "validation": {
+            "allow_empty_value": true
+        }
+    },
+    {
+        "id": "amount__debit__",
+        "field": "amount",
+        "label": "amount (debit)",
+        "value_separator": ",",
+        "type": "string",
+        "validation": {
+            "allow_empty_value": true
+        }
+    },
+    {
+        "id": "amount_in_curency__credit__",
+        "field": "amount_in_curency",
+        "label": "amount_in_curency (credit)",
+        "value_separator": ",",
+        "type": "string",
+        "validation": {
+            "allow_empty_value": true
+        }
+    },
+    {
+        "id": "amount_in_curency__debit__",
+        "field": "amount_in_curency",
+        "label": "amount_in_curency (debit)",
+        "value_separator": ",",
+        "type": "string",
+        "validation": {
+            "allow_empty_value": true
+        }
+    },
+    {
+        "id": "curency_code__credit__",
+        "field": "curency_code",
+        "label": "curency_code (credit)",
+        "value_separator": ",",
+        "type": "string",
+        "validation": {
+            "allow_empty_value": true
+        }
+    },
+    {
+        "id": "curency_code__debit__",
+        "field": "curency_code",
+        "label": "curency_code (debit)",
+        "value_separator": ",",
+        "type": "string",
+        "validation": {
+            "allow_empty_value": true
+        }
+    },
+    {
+        "id": "credit_amount__credit__",
+        "field": "credit_amount",
+        "label": "credit_amount (credit)",
+        "value_separator": ",",
+        "type": "string",
+        "validation": {
+            "allow_empty_value": true
+        }
+    },
+    {
+        "id": "credit_amount__debit__",
+        "field": "credit_amount",
+        "label": "credit_amount (debit)",
+        "value_separator": ",",
+        "type": "string",
+        "validation": {
+            "allow_empty_value": true
+        }
+    },
+    {
+        "id": "debit_amount__credit__",
+        "field": "debit_amount",
+        "label": "debit_amount (credit)",
+        "value_separator": ",",
+        "type": "string",
+        "validation": {
+            "allow_empty_value": true
+        }
+    },
+    {
+        "id": "debit_amount__debit__",
+        "field": "debit_amount",
+        "label": "debit_amount (debit)",
+        "value_separator": ",",
+        "type": "string",
+        "validation": {
+            "allow_empty_value": true
+        }
+    },
+    {
+        "id": "contra_account_type__credit__",
+        "field": "contra_account_type",
+        "label": "contra_account_type (credit)",
+        "value_separator": ",",
+        "type": "string",
+        "validation": {
+            "allow_empty_value": true
+        }
+    },
+    {
+        "id": "contra_account_type__debit__",
+        "field": "contra_account_type",
+        "label": "contra_account_type (debit)",
+        "value_separator": ",",
+        "type": "string",
+        "validation": {
+            "allow_empty_value": true
+        }
+    },
+    {
+        "id": "contra_account__credit__",
+        "field": "contra_account",
+        "label": "contra_account (credit)",
+        "value_separator": ",",
+        "type": "string",
+        "validation": {
+            "allow_empty_value": true
+        }
+    },
+    {
+        "id": "contra_account__debit__",
+        "field": "contra_account",
+        "label": "contra_account (debit)",
+        "value_separator": ",",
+        "type": "string",
+        "validation": {
+            "allow_empty_value": true
+        }
+    },
+    {
+        "id": "created_by_user__credit__",
+        "field": "created_by_user",
+        "label": "created_by_user (credit)",
+        "value_separator": ",",
+        "type": "string",
+        "validation": {
+            "allow_empty_value": true
+        }
+    },
+    {
+        "id": "created_by_user__debit__",
+        "field": "created_by_user",
+        "label": "created_by_user (debit)",
+        "value_separator": ",",
+        "type": "string",
+        "validation": {
+            "allow_empty_value": true
+        }
+    },
+    {
+        "id": "transaction_id__credit__",
+        "field": "transaction_id",
+        "label": "transaction_id (credit)",
+        "value_separator": ",",
+        "type": "string",
+        "validation": {
+            "allow_empty_value": true
+        }
+    },
+    {
+        "id": "transaction_id__debit__",
+        "field": "transaction_id",
+        "label": "transaction_id (debit)",
+        "value_separator": ",",
+        "type": "string",
+        "validation": {
+            "allow_empty_value": true
+        }
+    },
+    {
+        "id": "source_type__credit__",
+        "field": "source_type",
+        "label": "source_type (credit)",
+        "value_separator": ",",
+        "type": "string",
+        "validation": {
+            "allow_empty_value": true
+        }
+    },
+    {
+        "id": "source_type__debit__",
+        "field": "source_type",
+        "label": "source_type (debit)",
+        "value_separator": ",",
+        "type": "string",
+        "validation": {
+            "allow_empty_value": true
+        }
+    },
+    {
+        "id": "source_number__credit__",
+        "field": "source_number",
+        "label": "source_number (credit)",
+        "value_separator": ",",
+        "type": "string",
+        "validation": {
+            "allow_empty_value": true
+        }
+    },
+    {
+        "id": "source_number__debit__",
+        "field": "source_number",
+        "label": "source_number (debit)",
+        "value_separator": ",",
+        "type": "string",
+        "validation": {
+            "allow_empty_value": true
+        }
+    },
+    {
+        "id": "source_name__credit__",
+        "field": "source_name",
+        "label": "source_name (credit)",
+        "value_separator": ",",
+        "type": "string",
+        "validation": {
+            "allow_empty_value": true
+        }
+    },
+    {
+        "id": "source_name__debit__",
+        "field": "source_name",
+        "label": "source_name (debit)",
+        "value_separator": ",",
+        "type": "string",
+        "validation": {
+            "allow_empty_value": true
+        }
+    },
+    {
+        "id": "source_code__credit__",
+        "field": "source_code",
+        "label": "source_code (credit)",
+        "value_separator": ",",
+        "type": "string",
+        "validation": {
+            "allow_empty_value": true
+        }
+    },
+    {
+        "id": "source_code__debit__",
+        "field": "source_code",
+        "label": "source_code (debit)",
+        "value_separator": ",",
+        "type": "string",
+        "validation": {
+            "allow_empty_value": true
+        }
+    },
+    {
+        "id": "cost_center_code__credit__",
+        "field": "cost_center_code",
+        "label": "cost_center_code (credit)",
+        "value_separator": ",",
+        "type": "string",
+        "validation": {
+            "allow_empty_value": true
+        }
+    },
+    {
+        "id": "cost_center_code__debit__",
+        "field": "cost_center_code",
+        "label": "cost_center_code (debit)",
+        "value_separator": ",",
+        "type": "string",
+        "validation": {
+            "allow_empty_value": true
+        }
+    },
+    {
+        "id": "project_code__credit__",
+        "field": "project_code",
+        "label": "project_code (credit)",
+        "value_separator": ",",
+        "type": "string",
+        "validation": {
+            "allow_empty_value": true
+        }
+    },
+    {
+        "id": "project_code__debit__",
+        "field": "project_code",
+        "label": "project_code (debit)",
+        "value_separator": ",",
+        "type": "string",
+        "validation": {
+            "allow_empty_value": true
+        }
+    },
+    {
+        "id": "rechargable_code__credit__",
+        "field": "rechargable_code",
+        "label": "rechargable_code (credit)",
+        "value_separator": ",",
+        "type": "string",
+        "validation": {
+            "allow_empty_value": true
+        }
+    },
+    {
+        "id": "rechargable_code__debit__",
+        "field": "rechargable_code",
+        "label": "rechargable_code (debit)",
+        "value_separator": ",",
+        "type": "string",
+        "validation": {
+            "allow_empty_value": true
+        }
+    },
+    {
+        "id": "dim1__credit__",
+        "field": "dim1",
+        "label": "dim1 (credit)",
+        "value_separator": ",",
+        "type": "string",
+        "validation": {
+            "allow_empty_value": true
+        }
+    },
+    {
+        "id": "dim1__debit__",
+        "field": "dim1",
+        "label": "dim1 (debit)",
+        "value_separator": ",",
+        "type": "string",
+        "validation": {
+            "allow_empty_value": true
+        }
+    },
+    {
+        "id": "dim2__credit__",
+        "field": "dim2",
+        "label": "dim2 (credit)",
+        "value_separator": ",",
+        "type": "string",
+        "validation": {
+            "allow_empty_value": true
+        }
+    },
+    {
+        "id": "dim2__debit__",
+        "field": "dim2",
+        "label": "dim2 (debit)",
+        "value_separator": ",",
+        "type": "string",
+        "validation": {
+            "allow_empty_value": true
+        }
+    },
+    {
+        "id": "dim3__credit__",
+        "field": "dim3",
+        "label": "dim3 (credit)",
+        "value_separator": ",",
+        "type": "string",
+        "validation": {
+            "allow_empty_value": true
+        }
+    },
+    {
+        "id": "dim3__debit__",
+        "field": "dim3",
+        "label": "dim3 (debit)",
+        "value_separator": ",",
+        "type": "string",
+        "validation": {
+            "allow_empty_value": true
+        }
+    },
+    {
+        "id": "dim4__credit__",
+        "field": "dim4",
+        "label": "dim4 (credit)",
+        "value_separator": ",",
+        "type": "string",
+        "validation": {
+            "allow_empty_value": true
+        }
+    },
+    {
+        "id": "dim4__debit__",
+        "field": "dim4",
+        "label": "dim4 (debit)",
+        "value_separator": ",",
+        "type": "string",
+        "validation": {
+            "allow_empty_value": true
+        }
+    },
+    {
+        "id": "dim5__credit__",
+        "field": "dim5",
+        "label": "dim5 (credit)",
+        "value_separator": ",",
+        "type": "string",
+        "validation": {
+            "allow_empty_value": true
+        }
+    },
+    {
+        "id": "dim5__debit__",
+        "field": "dim5",
+        "label": "dim5 (debit)",
+        "value_separator": ",",
+        "type": "string",
+        "validation": {
+            "allow_empty_value": true
+        }
+    },
+    {
+        "id": "type__credit__",
+        "field": "type",
+        "label": "type (credit)",
+        "value_separator": ",",
+        "type": "string",
+        "validation": {
+            "allow_empty_value": true
+        }
+    },
+    {
+        "id": "type__debit__",
+        "field": "type",
+        "label": "type (debit)",
+        "value_separator": ",",
+        "type": "string",
+        "validation": {
+            "allow_empty_value": true
+        }
+    }
+]
+}
