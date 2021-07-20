@@ -107,6 +107,17 @@
     .then(data => { initQueryBuilder(data.filters);} )
     .catch(err => console.log(error));
 
+  const categories = ["pojisteni", "stavebniny", "pohostinstvi"];
+  let sel = document.createElement("select");
+  sel.className = "category-select";
+
+  categories.forEach(c => {
+    const opt = document.createElement("option");
+    opt.text = c;
+    opt.name = c;
+    sel.add(opt, null);
+  });
+
   var initQueryBuilder = (filters) => {
     $('[data-toggle="tooltip"]').tooltip();
 
@@ -251,6 +262,7 @@
 
     // init
     $('#builder_0 .builder').queryBuilder(options);
+    $('#builder_0').append(sel.outerHTML);
 
     $('#builder_0 .builder').on('afterCreateRuleInput.queryBuilder', function(e, rule) {
       if (rule.filter.plugin == 'selectize') {
@@ -359,6 +371,7 @@
                     <div class="btn-group">
                         <button class="btn btn-danger remove">- Remove rule set</button>
                     </div>
+                    ${sel.outerHTML}
                  </div>`;
       $('#builders').append(el);
       $(`#${builderId} .builder`).queryBuilder(options);
@@ -370,7 +383,7 @@
     // get rules
     $('.parse-json').on('click', function() {
       var output = [];
-      $('.builder').each(function(b) {
+      $('.builder').each(function() {
         output.push(
           $(this).queryBuilder('getRules', {
             get_flags: true,
