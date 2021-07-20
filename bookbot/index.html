@@ -343,6 +343,10 @@
     // reset builder
     $('.reset').on('click', function() {
       $('#builder_0 .builder').queryBuilder('reset');
+      $('.builder-container').each(function(i) {
+        if(i > 0)
+          $(this).remove();
+      });
       $('#result').addClass('hide').find('pre').empty();
     });
 
