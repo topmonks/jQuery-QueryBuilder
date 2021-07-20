@@ -115,7 +115,7 @@
     .then(data => { initQueryBuilder(data.filters);} )
     .catch(err => console.log(error));
 
-  let categories = ["pojisteni", "stavebniny", "pohostinstvi"];
+  let categories = ["Pojisteni", "Stavebniny", "Pohostinstvi"];
 
   const getCategorySelect = () => {
     let sel = document.createElement("select");
@@ -410,18 +410,20 @@
 
     // get rules
     $('.parse-json').on('click', function() {
-      var output = [];
+      var rulesOutput = [];
       $('.builder-container').each(function() {
         const categoryName = $('.category-select', this).val();
         const rules = $('.builder', this).queryBuilder('getRules', {
           get_flags: true,
           skip_empty: true
         });
-        output.push({category: categoryName, json: rules})
+        rulesOutput.push({category: categoryName, json: rules})
       });
 
+      const payload = [{ rules: rulesOutput, rules_set: 1, company: 1 }];
+
       $('#result').removeClass('hide')
-        .find('pre').html(JSON.stringify([{ rules: output, rules_set: 1, company: 1 }], undefined, 2));
+        .find('pre').html(JSON.stringify(payload, undefined, 2));
     });
   }
 
