@@ -43,24 +43,23 @@
       </div>
 
       <div class="btn-group">
-        <button class="btn btn-success add">+ Add rule set</button>
+        <button class="btn btn-primary add">+ Add rule set</button>
       </div>
 
       <div class="btn-group">
         <button class="btn btn-default" disabled>Set:</button>
-        <button class="btn btn-success set">From JSON</button>
-      </div>
-
-      <div class="btn-group">
-        <button class="btn btn-default" disabled>Get:</button>
-        <button class="btn btn-primary parse-json">JSON</button>
+        <button class="btn btn-primary set">From JSON</button>
       </div>
 
       <div class="form-group">
-        <label for="add-category-input">Add custom category</label>
-        <input type="text" class="form-control" id="add-category-input" placeholder="Category name">
-        <button type="submit" class="btn btn-primary mb-2" id="add-category-btn">Submit</button>
+        <input type="text" class="form-control" id="add-category-input" placeholder="Custom category">
+        <button type="submit" class="btn btn-primary mb-2" id="add-category-btn">Add category</button>
       </div>
+
+      <div class="btn-group">
+        <button class="btn btn-success test-post">Test</button>
+      </div>
+
     </div>
 
     <div id="result" class="hide">
@@ -116,6 +115,7 @@
     .catch(err => console.log(error));
 
   let categories = ["Pojisteni", "Stavebniny", "Pohostinstvi"];
+  const apiUrl = "https://private-anon-572fbcdfe6-boobbot.apiary-mock.com/rules";
 
   const getCategorySelect = () => {
     let sel = document.createElement("select");
@@ -409,7 +409,7 @@
     });
 
     // get rules
-    $('.parse-json').on('click', function() {
+    $('.test-post').on('click', function() {
       var rulesOutput = [];
       $('.builder-container').each(function() {
         const categoryName = $('.category-select', this).val();
@@ -420,16 +420,20 @@
         rulesOutput.push({category: categoryName, json: rules})
       });
 
-      const payload = [{ rules: rulesOutput, rules_set: 1, company: 1 }];
+      const payload = JSON.stringify([{ rules: rulesOutput, rules_set: 1, company: 1 }], undefined, 2);
 
-      $('#result').removeClass('hide')
-        .find('pre').html(JSON.stringify(payload, undefined, 2));
+      $.post( apiUrl, payload)
+        .done(function(data) {
+          $('#result').removeClass('hide')
+            .find('pre').html(JSON.stringify(data, undefined, 2));
+        })
+        .fail(function(res) {
+          if(res.status === 201)
+          $('#result').removeClass('hide')
+            .find('pre').html(JSON.stringify(res, undefined, 2));
+        })
     });
   }
-
-
-
-
 </script>
 
 <script>
