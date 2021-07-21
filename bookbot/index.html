@@ -26,6 +26,9 @@
     .mr-05 {
       margin-right: 0.5em;
     }
+    .flex-right {
+      display: flex; justify-content: right;
+    }
   </style>
 </head>
 
@@ -40,26 +43,25 @@
       </div>
     </div>
   </div>
-      <div class="form-inline col-lg-7 mb-3 col-lg-offset-1">
-        <div class="btn-group">
+      <div class="form-inline col-lg-7 col-lg-offset-1">
+        <div class="btn-group mr-05">
           <button class="btn btn-primary add">+ Add rule set</button>
         </div>
 
-        <div class="btn-group">
+        <div class="btn-group mr-05">
           <button class="btn btn-default" disabled>Set:</button>
           <button class="btn btn-primary set">From JSON</button>
         </div>
 
-        <div class="form-group">
+        <div class="form-group mr-05">
           <input type="text" class="form-control" id="add-category-input" placeholder="Custom category">
           <button type="submit" class="btn btn-primary mb-2" id="add-category-btn">Add category</button>
         </div>
       </div>
-      <div class="col-lg-2 col-lg-offset-1" style="display: flex; justify-content: right;">
+      <div class="col-lg-2 col-lg-offset-1 flex-right">
         <div class="btn-group mr-05">
           <button class="btn btn-danger reset">Reset</button>
         </div>
-
         <div class="btn-group">
           <button class="btn btn-success test-post">Test</button>
         </div>
